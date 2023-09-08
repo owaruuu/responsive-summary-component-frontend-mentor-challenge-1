@@ -9,7 +9,12 @@ $.getJSON("data.json", data => {
 
     $('.ammount').each(function(index){
         this.textContent = data[index].score;
-    });    
+    });  
+
+    $('.category-section').each(function(index){
+        const categ = data[index].category.toLowerCase();
+        this.classList.add(categ);
+    });
 }).fail((err) =>{
     console.log("An error has occurred. ", err);
 });
